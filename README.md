@@ -54,6 +54,11 @@ export BING_API_KEY="your_bing_api_key"          # Bing 搜索 API 密钥
 # Windows 可使用 setx 命令或系统环境变量面板
 ```
 
+### 4. 知识库配置：
+知识库相关文件储存在此目录下
+knowledge_base/docs/
+系统会自动处理文档并建立索引，存储在 knowledge_base/indexes/ 目录
+
 ---
 
 ## 使用示例
