@@ -31,31 +31,50 @@ llm-search/
 
 ## 安装使用
 
-1. 克隆仓库
+### 1. 克隆仓库
 ```bash
 git clone https://github.com/chrisLee12345/llm-search.git
 cd llm-search
+```
 
-2. 安装依赖
+### 2. 安装依赖
 ```bash
+# 推荐先创建虚拟环境
 pip install -r requirements.txt
+```
 
-3.配置环境变量
+### 3. 配置 API 密钥
 ```bash
-export AZURE_OPENAI_API_KEY="your_api_key"
-export AZURE_OPENAI_ENDPOINT="your_endpoint"
-export BING_API_KEY="your_bing_api_key"
+# 请替换为你的实际 API 信息（临时生效）
+export AZURE_OPENAI_API_KEY="your_api_key"       # Azure OpenAI 密钥
+export AZURE_OPENAI_ENDPOINT="your_endpoint"     # Azure 服务地址
+export BING_API_KEY="your_bing_api_key"          # Bing 搜索 API 密钥
+
+# 永久生效建议写入 ~/.bashrc 或 ~/.zshrc（Linux/Mac）
+# Windows 可使用 setx 命令或系统环境变量面板
+```
+
+---
 
 ## 使用示例
 
-项目提供了快速启动脚本 quick_start.py，可以直接运行测试：
-
+### 快速启动
 ```bash
 python quick_start.py
+```
+*默认执行示例查询：`"分析中国新能源汽车行业的发展趋势"`*
 
-默认会执行一个示例查询："分析中国新能源汽车行业的发展趋势"
-你也可以修改 quick_start.py 中的查询内容来测试其他场景：
+### 自定义查询
+1. 编辑 `quick_start.py` 文件：
+```python
 if __name__ == "__main__":
-    # 修改这里的查询内容
+    # 修改查询内容（支持自然语言）
     query = "你的查询内容"
     asyncio.run(analyze_query(query))
+```
+
+2. 重新运行脚本：
+```bash
+python quick_start.py
+```
+
