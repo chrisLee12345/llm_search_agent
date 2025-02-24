@@ -7,7 +7,7 @@ import aiohttp
 
 async def test_bing_search_async():
     """测试 Bing 搜索的异步调用"""
-    subscription_key = "31dae6e97e1545218c4b0b950b419e11"
+    subscription_key = "ENTERYOURBINGAPIHERE"
     endpoint = "https://api.bing.microsoft.com/v7.0/search"
     
     # 测试查询
@@ -43,7 +43,7 @@ async def test_bing_search_async():
 
 def test_bing_search_sync():
     """测试 Bing 搜索的同步调用"""
-    subscription_key = "31dae6e97e1545218c4b0b950b419e11"
+    subscription_key = "ENTERYOURBINGAPIHERE"
     endpoint = "https://api.bing.microsoft.com/v7.0/search"
     
     query = "人工智能"
