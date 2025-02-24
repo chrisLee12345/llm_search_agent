@@ -5,10 +5,10 @@ from pydantic import BaseModel
 class APIConfig(BaseModel):
     """API 配置类"""
     azure_openai: Dict[str, str] = {
-        "api_key": "DuyZ0hHrPDcKN5FswiEyi43Reqqu2qLulqfQMglca8xDYA79URG3JQQJ99BAACYeBjFXJ3w3AAABACOGvlW6",
+        "api_key": "enter your api key",
         "api_version": "2024-08-01-preview",
-        "azure_endpoint": "https://ai-search-gpt4.openai.azure.com",
-        "model": "gpt-4o"
+        "azure_endpoint": "enter your endpoint",
+        "model": "enter your model name"
     }
     
     bing_search: Dict[str, str] = {
@@ -17,8 +17,8 @@ class APIConfig(BaseModel):
     }
     
     embedding: Dict[str, str] = {
-        "azure_endpoint": "https://ai-search-gpt4.openai.azure.com",
-        "api_key": "DuyZ0hHrPDcKN5FswiEyi43Reqqu2qLulqfQMglca8xDYA79URG3JQQJ99BAACYeBjFXJ3w3AAABACOGvlW6",
+        "azure_endpoint": "enter your endpoint",
+        "api_key": "enter your api key",
         "api_version": "2024-02-15-preview",
         "model": "text-embedding-3-large"
     }
