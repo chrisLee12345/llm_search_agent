@@ -3,86 +3,66 @@
 // This source code is licensed under the MIT license.
 // LICENSE file in the root directory of this source tree.
 
-基于大语言模型的智能搜索系统。
+An intelligent search system based on large language models.
 
-## 功能特点
+Features
+Supports multiple document formats (PDF, Word, Excel, Markdown, Text)
+Intelligent document parsing and vectorized storage
+Semantic search powered by Azure OpenAI
+Adaptive context management
+Token usage tracking
+Result quality evaluation
 
-- 支持多种文档格式（PDF、Word、Excel、Markdown、Text）
-- 智能文档解析和向量化存储
-- 基于 Azure OpenAI 的语义搜索
-- 自适应上下文管理
-- Token 使用追踪
-- 结果质量评估
-
-## 项目结构
+## Project Structure
 llm-search/
 ├── engine/
-│   ├── core/           # 核心功能模块
-│   ├── indexer/        # 文档索引模块
-│   └── web/           # Web API 配置
+│   ├── core/           # Core functionality module
+│   ├── indexer/        # Document indexing module
+│   └── web/            # Web API configuration
 ├── knowledge_base/
-│   ├── docs/          # 文档存储
-│   └── indexes/       # 索引存储
-└── tests/            # 测试用例
+│   ├── docs/           # Document storage
+│   └── indexes/        # Index storage
+└── tests/              # Test cases
 
+## Requirements
+Python 3.8+
+Access to Azure OpenAI API
+Access to Bing Search API
 
-## 环境要求
-
-- Python 3.8+
-- Azure OpenAI API 访问权限
-- Bing Search API 访问权限
-
-## 安装使用
-
-### 1. 克隆仓库
-```bash
+## Installation and Usage
+### 1. Clone the Repository
 git clone https://github.com/chrisLee12345/llm-search.git
 cd llm-search
-```
 
-### 2. 安装依赖
-```bash
-# 推荐先创建虚拟环境
+### 2. Install Dependencies
+# It is recommended to create a virtual environment first
 pip install -r requirements.txt
-```
 
-### 3. 配置 API 密钥
-```bash
-# 请替换为你的实际 API 信息（临时生效）
-export AZURE_OPENAI_API_KEY="your_api_key"       # Azure OpenAI 密钥
-export AZURE_OPENAI_ENDPOINT="your_endpoint"     # Azure 服务地址
-export BING_API_KEY="your_bing_api_key"          # Bing 搜索 API 密钥
+### 3. Configure API Keys
+Configure the required API parameters in engine/web/apiconfig.py.
 
-# 永久生效建议写入 ~/.bashrc 或 ~/.zshrc（Linux/Mac）
-# Windows 可使用 setx 命令或系统环境变量面板
-```
+### 4. Knowledge Base Configuration
+Knowledge base files are stored in the directory knowledge_base/docs/.
+The system will automatically process documents and create indexes, which are stored in the knowledge_base/indexes/ directory.
 
-### 4. 知识库配置：
-知识库相关文件储存在此目录下
-knowledge_base/docs/
-系统会自动处理文档并建立索引，存储在 knowledge_base/indexes/ 目录
-
+### 5. Cost Calculation
+The costs for each run will be automatically generated and stored in the following path:
+logs/costs
 ---
 
-## 使用示例
-
-### 快速启动
-```bash
+## Usage Examples
+### Quick Start
 python quick_start.py
-```
-*默认执行示例查询：`"分析中国新能源汽车行业的发展趋势"`*
+By default, this runs an example query:
+"Analyze the development trends of China's new energy vehicle industry"
 
-### 自定义查询
-1. 编辑 `quick_start.py` 文件：
-```python
+### Custom Queries
+1. Edit the quick_start.py file:
 if __name__ == "__main__":
-    # 修改查询内容（支持自然语言）
-    query = "你的查询内容"
+    # Modify the query content (supports natural language)
+    query = "Your query content"
     asyncio.run(analyze_query(query))
-```
 
-2. 重新运行脚本：
-```bash
+2. Re-run the script:
 python quick_start.py
-```
 
