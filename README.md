@@ -1,5 +1,8 @@
 # LLM Search
 
+// This source code is licensed under the MIT license.
+// LICENSE file in the root directory of this source tree.
+
 基于大语言模型的智能搜索系统。
 
 ## 功能特点
